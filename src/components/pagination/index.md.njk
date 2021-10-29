@@ -1,6 +1,6 @@
 ---
 title: Pagination
-description:
+description: Help users navigate long lists or collections of pages like search results
 section: Components
 aliases:
 backlog_issue_id: 77
@@ -9,11 +9,55 @@ layout: layout-pane.njk
 
 {% from "_example.njk" import example %}
 
+Help users navigate long lists split across multiple pages.
 
 ## When to use this component
+
+Use this component when you need to break a long list into multiple pages.
+
+For example because the full list would take too long to download, or because the
+items further down the list are not typically needed by most users.
 
 
 ## When not to use this component
 
+Don't use pagination for short lists. Try to set the number of items per page so
+that  most users find what they need on the first page.
+
+Don't use pagination to link together sections in an article. Instead, use links
+named after the title of each section.
+
+Avoid using 'infinite scroll' style pagination (where new content loads onto the page
+as the user approaches the bottom), as it causes problems for keyboard users.
+
+
+## How it works
+
+Add the pagination component below the main content of each page in the list of results.
+
+Don't show the pagination component if there's only one page of results.
+
+If the URL of a specific page is no longer valid, redirect users to the first page.
+
+Make sure that the current page is represented in the list, but not as a link.
+
+If the user filters or sorts the list, apply this to the whole list, not just the current
+page. Redirect the user back to the first page of the new results.
+
+If the item the user is looking for is equally likely to be on any of the pages,
+provide a link to the last page of the list.
+
+Provide a link back to the first page, so that users who have clicked too far can
+easily get back and start again.
+
+Show the total number of results if it's helpful to users - for example,
+because it indicates how successful their search has been, or how large the data set is.
+
+Include information about the page number in the title of the page, so people
+bookmarking it know which one they are. For example 'Search results (page 1 of 4)'.
+
 
 ## Research on this component
+
+This component is based on similar ones developed and used sucessfully by the Ministry of
+Justice and the Home Office, and on feedback in the Design System backlog.

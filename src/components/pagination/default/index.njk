@@ -3,4 +3,29 @@ title: Pagination
 layout: layout-example.njk
 ---
 
-<p>[EXAMPLE]</p>
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  "previous": {
+    "text": "Previous page",
+    "href": "#"
+  },
+  "next": {
+    "text": "Next page",
+    "href": "#"
+  },
+  "items": [
+    {
+      "text": "1",
+      "href": "#"
+    },
+    {
+      "text": "2",
+      "selected": true
+    },
+    {
+      "text": "3",
+      "href": "#"
+    }
+  ]
+}) }}

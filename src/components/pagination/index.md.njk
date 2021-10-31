@@ -15,10 +15,11 @@ Help users navigate long lists split across multiple pages.
 
 ## When to use this component
 
-Use this component when you need to break a long list into multiple pages.
+Use this component when you need help users navigate a long list of things that
+have been split across multiple pages.
 
-For example because the full list would take too long to download, or because the
-items further down the list are not typically needed by most users.
+For example because the full list would take too long to download on a single page,
+or because the things further down the list are not needed by most users.
 
 
 ## When not to use this component
@@ -41,19 +42,34 @@ Don't show the pagination component if there's only one page of results.
 
 If the URL of a specific page is no longer valid, redirect users to the first page.
 
-Make sure that the current page is represented in the list, but not as a link.
+Show the current page in bold, but not as a link.
 
-If the user filters or sorts the list, apply this to the whole list, not just the current
-page. Redirect the user back to the first page of the new results.
+On the first page, don't show the link to a previous page.
 
-If the item the user is looking for is equally likely to be on any of the pages,
-provide a link to the last page of the list.
+{{ example({group: "components", item: "pagination", example: "first-page", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-Provide a link back to the first page, so that users who have clicked too far can
-easily get back and start again.
+On the last page, don't show the link to a next page.
+
+{{ example({group: "components", item: "pagination", example: "last-page", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+When there are 10 or more pages, truncate the list using ellipses.
+
+{{ example({group: "components", item: "pagination", example: "elipses", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+Always provide links to the first and last pages, so users can easily see
+how many pages there are, and jump back to the first page in one click.
 
 Show the total number of results if it's helpful to users - for example,
 because it indicates how successful their search has been, or how large the data set is.
+
+{{ example({group: "components", item: "pagination", example: "results", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+By default the items are called 'results', but this can be changed.
+
+{{ example({group: "components", item: "pagination", example: "results-alternate", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+If the user filters or sorts the list, apply this to the whole list, not just the current
+page. Redirect the user back to the first page of the new results.
 
 Include information about the page number in the title of the page, so people
 bookmarking it know which one they are. For example 'Search results (page 1 of 4)'.

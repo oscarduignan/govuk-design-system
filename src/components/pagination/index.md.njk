@@ -61,23 +61,31 @@ On the last page, don't show the link to a next page.
 
 ### Long collections of pages
 
-When there are 10 or more pages, truncate the list using ellipses.
-
-{{ example({group: "components", item: "pagination", example: "elipses-2", html: true, nunjucks: true, open: false, size: "s"}) }}
-
-In the middle of a long list, show the same number of links before and after the
-current page. Always provide links to the first and last pages, so users can
-easily see how many pages there are, and jump back to the first page in one
-click.
+When there are 8 or more pages, truncate the list using 3 dots.
 
 {{ example({group: "components", item: "pagination", example: "elipses", html: true, nunjucks: true, open: false, size: "s"}) }}
 
+When truncating the list, follow these rules:
+
+- always show the first, last and current page
+- always show the page immediately before and after the current page
+- replace any gaps of 2 or more pages between those pages with 3 dots
+
+For example:
+
+- **1** 2 … 1000
+- 1 **2** 3 … 1000
+- 1 2 **3** 4 … 1000
+- 1 2 3 **4** 5 … 1000
+- 1 … 4 **5** 6 … 1000
+- 1 … 997 **998** 999 1000
+- 1 … 998 **999** 1000
+- 1 … 999 **1000**
 
 ### Showing the total number of results
 
-Add information about the total number of results, but only if it's helpful -
-for example, because it indicates how successful a search has been, or how
-large the data set is.
+If users need to know how many results there are (for example, so they can tell
+how sucessful a search has been) you can add that information like this:
 
 {{ example({group: "components", item: "pagination", example: "results", html: true, nunjucks: true, open: false, size: "s"}) }}
 

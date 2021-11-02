@@ -1,0 +1,183 @@
+---
+title: Pagination - full page examples
+layout: layout-example-full-page.njk
+---
+
+{% extends "example-wrappers/full-page.njk" %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Search results</h1>
+
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Link to search result</a>
+        <p class="govuk-body">Excerpt from page that matches the search criteria</p>
+        <p class="govuk-body-s">Updated: <time datetime="2021-10-04">4 October 2021</time></p>
+      </li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    {{ govukPagination({
+      "results": {
+        "from": 70,
+        "to": 80,
+        "count": 420
+      },
+      "previous": {
+        "text": "Previous",
+        "href": "#"
+      },
+      "next": {
+        "text": "Next",
+        "href": "#"
+      },
+      "items": [
+        {
+          "text": "1",
+          "href": "#"
+        },
+        {
+          "type": "dots"
+        },
+        {
+          "text": "6",
+          "href": "#"
+        },
+        {
+          "text": "7",
+          "selected": true
+        },
+        {
+          "text": "8",
+          "href": "#"
+        },
+        {
+          "type": "dots"
+        },
+        {
+          "text": "42",
+          "href": "#"
+        }
+      ]
+    }) }}
+
+<!--
+
+    {{ govukPagination({
+      "previous": {
+        "text": "Previous page",
+        "href": "#"
+      },
+      "next": {
+        "text": "Next page",
+        "href": "#"
+      },
+      "items": [
+        {
+          "text": "1",
+          "href": "#"
+        },
+        {
+          "text": "2",
+          "href": "#"
+        },
+        {
+          "text": "3",
+          "href": "#"
+        },
+        {
+          "text": "4",
+          "href": "#"
+        },
+        {
+          "text": "5",
+          "href": "#"
+        },
+        {
+          "text": "6",
+          "selected": true
+        },
+        {
+          "text": "7",
+          "href": "#"
+        },
+        {
+          "text": "8",
+          "href": "#"
+        },
+        {
+          "text": "9",
+          "href": "#"
+        },
+        {
+          "text": "10",
+          "href": "#"
+        },
+        {
+          "type": "dots"
+        },
+        {
+          "text": "1000",
+          "href": "#"
+        }
+      ]
+    }) }}
+
+-->
+
+    </div>
+  </div>
+{% endblock %}

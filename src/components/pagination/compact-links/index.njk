@@ -1,16 +1,11 @@
 ---
-title: Results
+title: Compact link text
 layout: layout-example.njk
 ---
 
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
 {{ govukPagination({
-  "results": {
-    "from": 50,
-    "to": 100,
-    "count": 150
-  },
   "previous": {
     "href": "#"
   },
@@ -23,11 +18,25 @@ layout: layout-example.njk
       "href": "#"
     },
     {
-      "text": "2",
+      "type": "dots"
+    },
+    {
+      "text": "4",
+      "href": "#"
+    },
+    {
+      "text": "5",
       "selected": true
     },
     {
-      "text": "3",
+      "text": "6",
+      "href": "#"
+    },
+    {
+      "type": "dots"
+    },
+    {
+      "text": "1000",
       "href": "#"
     }
   ]

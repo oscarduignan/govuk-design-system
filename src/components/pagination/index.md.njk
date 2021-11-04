@@ -52,13 +52,14 @@ browser tabs or bookmarks. For example 'Search results (page 1 of 4)'.
 
 ### Previous and next links
 
-Previous and next links should be labelled 'Previous page' and 'Next page'.
+Previous and next links are labelled 'Previous page' and 'Next page'. The word
+'page' is visually hidden to conserve horizontal space.
 
 {{ example({group: "components", item: "pagination", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-If horizontal space is limited you can visually hide the word 'page'.
+You can provide custom text for previous and next links if you need to.
 
-{{ example({group: "components", item: "pagination", example: "compact-links", html: true, nunjucks: true, open: false, size: "s"}) }}
+{{ example({group: "components", item: "pagination", example: "custom-link-text", html: true, nunjucks: true, open: false, size: "s"}) }}
 
 On the first page, don't show the previous page link.
 

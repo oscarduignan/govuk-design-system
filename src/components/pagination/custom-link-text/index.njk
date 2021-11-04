@@ -1,5 +1,5 @@
 ---
-title: Compact link text
+title: Custom link text
 layout: layout-example.njk
 ---
 
@@ -7,10 +7,12 @@ layout: layout-example.njk
 
 {{ govukPagination({
   "previous": {
-    "href": "#"
+    "href": "#",
+    "text": "Previous page"
   },
   "next": {
-    "href": "#"
+    "href": "#",
+    "text": "Next page"
   },
   "items": [
     {
@@ -18,25 +20,11 @@ layout: layout-example.njk
       "href": "#"
     },
     {
-      "type": "dots"
-    },
-    {
-      "text": "4",
-      "href": "#"
-    },
-    {
-      "text": "5",
+      "text": "2",
       "selected": true
     },
     {
-      "text": "6",
-      "href": "#"
-    },
-    {
-      "type": "dots"
-    },
-    {
-      "text": "1000",
+      "text": "3",
       "href": "#"
     }
   ]

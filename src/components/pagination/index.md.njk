@@ -9,46 +9,39 @@ layout: layout-pane.njk
 
 {% from "_example.njk" import example %}
 
-Help users navigate collections of numbered pages like search results.
+Help users navigate a series of pages like search results.
 
 {{ example({group: "components", item: "pagination", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
 ## When to use this component
 
-Use this component when you need to split a list of results across multiple
-pages, for example because the full list would take too long to download on a
-single page, or because the results further down the list are not needed by most
-users.
+Use this component when you need to show a list of information, such as search results, across multiple pages.
 
+You might do this when:
+- showing the full list on a single page makes the page too long to load
+- the results further down the list are not needed by most users
 
 ## When not to use this component
 
-Only break up lists into multiple pages if it improves the performance or
-usability of your service.
+Only break up lists into pages if it improves the performance or usability of your service.
 
-Don't use this component to link together sections in a multi-page article.
-Instead, use links named after the title of each section.
+Do not use this component to link sections together as a multi-page article.
+Instead, use links named after the title of each section. Also, [see the Step by Step navigation pattern](/patterns/step-by-step-navigation/).
 
-Avoid using 'infinite scroll' style pagination (where new content loads onto the
-page as the user approaches the bottom), as it causes problems for keyboard
-users.
-
+Avoid using the 'infinite scroll' technique to automatically load content when the user approaches the bottom of the page. This causes problems for keyboard users.
 
 ## How it works
 
-Add the pagination component below the main content of each page in the list of
+Add the pagination component after the main content of each page in the list of
 results.
 
 [View an example of the component in a standard GOV.UK page template](in-page/index.html).
 
-Don't show the pagination component if there's only one page of results.
+Show the page number to the title of the page so the user can see it in browser tabs and bookmarks. For example 'Search results (page 1 of 4)'.
 
-If the URL of a specific results page is no longer valid, redirect users to the
-first page.
+Do not show pagination if there's only one page of results.
 
-Add the page number to the title of the page, so that people can see it in their
-browser tabs or bookmarks. For example 'Search results (page 1 of 4)'.
-
+Redirect users to the first page if they enter a URL with a page number that does not exist.
 
 ### Previous and next links
 
@@ -60,31 +53,26 @@ If horizontal space is limited you can visually hide the word 'page'.
 
 {{ example({group: "components", item: "pagination", example: "compact-links", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-On the first page, don't show the previous page link.
+Do not show the previous page link on the first page — and do not show the next page link on the last page.
 
 {{ example({group: "components", item: "pagination", example: "first-page", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-On the last page, don't show the next page link.
-
 {{ example({group: "components", item: "pagination", example: "last-page", html: true, nunjucks: true, open: false, size: "s"}) }}
 
+### Showing large numbers of pages
 
-### Long collections of pages
-
-When there are many pages, truncate the list using ellipses.
+Use ellipses (`...`) to skip over pages when needed.
 
 {{ example({group: "components", item: "pagination", example: "elipses", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-Adjust the total number of pages you show to fit the horizontal space available.
+Adjust the page numbers shown to fit the horizontal space available.
 
-When truncating the list, follow these rules:
-
-- always show the first, last and current page
-- always show at least one page immediately before and after the current page
-- replace any gaps of 2 or more pages between those pages with 3 dots
+Be sure to:
+- show the first, last and current page
+- show at least one page immediately before and after the current page
+- replace gaps of 2 or more pages with elipses (`...`)
 
 For example:
-
 - **1** 2 … 100
 - 1 **2** 3 … 100
 - 1 2 **3** 4 … 100
@@ -94,28 +82,22 @@ For example:
 - 1 … 98 **99** 100
 - 1 … 99 **100**
 
-
 ### Showing the total number of results
 
-If users need to know how many results there are (for example, so they can tell
-how sucessful a search has been) you can add that information like this:
+If users need to know the number of total results, such as to tell them how sucessful a search has been, you can add that information like this:
 
 {{ example({group: "components", item: "pagination", example: "results", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-By default the items are called 'results', but change this if it makes more sense.
+You can change "results" to something else if it makes more sense.
 
 {{ example({group: "components", item: "pagination", example: "team-members", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-
-
 ### Filtering and sorting lists
 
-If the user filters or sorts the list, apply this to the whole list (not just the current page) and
-redirect them back to the first page of the new results.
+If the user filters or sorts the list, apply this to the whole list (not just the current page) and redirect them back to the first page of the new results.
 
 Set the number of items per page and the sorting algorithm so that most users
 find what they need on the first page.
-
 
 ## Research on this component
 

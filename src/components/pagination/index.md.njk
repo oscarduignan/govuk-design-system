@@ -9,44 +9,53 @@ layout: layout-pane.njk
 
 {% from "_example.njk" import example %}
 
-Help users navigate a series of pages like search results.
+Help users navigate a series of pages like search results or guides.
 
 {{ example({group: "components", item: "pagination", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
 ## When to use this component
 
-Use this component when you need to show a list of information, such as search results, across multiple pages.
+Use this component when you need to present content, such as guidance or search results, across multiple pages.
 
 You might do this when:
-- showing the full list on a single page makes the page too long to load
-- the results further down the list are not needed by most users
+- showing all the content on a single page makes the page take too long to load
+- users may benefit from bookmarking or linking to specific pages of the content
+- most users will only need the content on the first pages
 
 ## When not to use this component
 
-Only break up lists into pages if it improves the performance or usability of your service.
-
-Do not use this component to link sections together as a multi-page article.
-Instead, use links named after the title of each section. Also, [see the Step by Step navigation pattern](/patterns/step-by-step-navigation/).
+Only break up content into pages if it improves the performance or usability of your service.
 
 Avoid using the 'infinite scroll' technique to automatically load content when the user approaches the bottom of the page. This causes problems for keyboard users.
 
 ## How it works
 
-Add the pagination component after the main content of each page in the list of
-results.
+Add the pagination component after the content on each page that you have broken up.
 
 [View an example of the component in a standard GOV.UK page template](in-page/index.html).
 
+For pages that users will mostly need to navigate in sequence, stack the previous page and next page links vertically, like this.
+
+{{ example({group: "components", item: "pagination", example: "labels", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+You can use the link labels to provide additional context.
+
+{{ example({group: "components", item: "pagination", example: "labels-2", html: true, nunjucks: true, open: false, size: "s"}) }}
+
+For pages where users might need to jump multiple pages forwards or backwards, add numbered page links, like this.
+
+{{ example({group: "components", item: "pagination", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
+
 Show the page number in the title of the page so the user can see it in browser tabs and bookmarks. For example 'Search results (page 1 of 4)'.
 
-Do not show pagination if there's only one page of results.
+Do not show pagination if there's only one page of content.
 
-Redirect users to the first page if they enter a URL with a page number that does not exist.
+Redirect users to the first page if they enter a URL of a page that no longer exists.
 
 ### Previous and next links
 
 Previous and next links are labelled 'Previous page' and 'Next page'. The word
-'page' is visually hidden to conserve horizontal space.
+'page' can be visually hidden to conserve horizontal space.
 
 {{ example({group: "components", item: "pagination", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
@@ -105,5 +114,5 @@ find what they need on the first page.
 ## Research on this component
 
 This component is based on similar ones developed and used sucessfully by the
-Ministry of Justice and the Home Office, and on feedback in the Design System
-backlog.
+Government Digital Service, Ministry of Justice and the Home Office,
+and on feedback in the Design System backlog.

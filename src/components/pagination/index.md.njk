@@ -34,7 +34,7 @@ Add the pagination component after the content on each page that you have broken
 
 [View an example of the component in a standard GOV.UK page template](in-page/index.html).
 
-For pages that users will mostly need to navigate in sequence, stack the previous page and next page links vertically, like this.
+For pages that users will mostly need to navigate in sequence, only show the previous and next links. Stack them  vertically, like this:```
 
 {{ example({group: "components", item: "pagination", example: "labels", html: true, nunjucks: true, open: false, size: "s"}) }}
 
@@ -42,7 +42,7 @@ You can use the link labels to provide additional context.
 
 {{ example({group: "components", item: "pagination", example: "labels-2", html: true, nunjucks: true, open: false, size: "s"}) }}
 
-For pages where users might need to jump multiple pages forwards or backwards, add numbered page links, like this.
+For pages where users might need to jump multiple pages forwards or backwards, add numbered page links, as well as the previous and next links, like this:
 
 {{ example({group: "components", item: "pagination", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
@@ -96,7 +96,7 @@ For example:
 
 ### Showing the total number of results
 
-If users need to know the number of total results, such as to tell them how sucessful a search has been, you can add that information like this:
+If users need to know the number of total results, such as to tell them how successful a search has been, you can add that information like this:
 
 {{ example({group: "components", item: "pagination", example: "results", html: true, nunjucks: true, open: false, size: "s"}) }}
 
@@ -113,6 +113,6 @@ find what they need on the first page.
 
 ## Research on this component
 
-This component is based on similar ones developed and used sucessfully by the
+This component is based on similar ones developed and used successfully by the
 Government Digital Service, Ministry of Justice and the Home Office,
 and on feedback in the Design System backlog.
